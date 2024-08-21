@@ -1,0 +1,28 @@
+{
+  "name": "nextjs-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "app",
+    "docs"
+  ],
+  "scripts": {
+    "dev": "npm run dev:app && npm run dev:docs",
+    "dev:app": "cd app && npm run dev",
+    "dev:docs": "cd docs && npm run dev",
+    "build": "npm run build:app && npm run build:docs",
+    "build:app": "cd app && npm run build",
+    "build:docs": "cd docs && npm run build",
+    "start": "concurrently \"npm run start:app\" \"npm run start:docs\"",
+    "start:app": "cd app && npm start",
+    "start:docs": "cd docs && npm start",
+    "install:app": "npm install --workspace=app",
+    "install:docs": "npm install --workspace=docs",
+    "add:app": "npm install --workspace=app",
+    "add:docs": "npm install --workspace=docs"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "http-proxy-middleware": "^3.0.0"
+  }
+}
