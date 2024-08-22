@@ -1,6 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/docs", "destination": "https://saastarter-docs.vercel.app" },
-    { "source": "/docs/:match*", "destination": "https://saastarter-docs.vercel.app/:match*" }
-  ]
-}
