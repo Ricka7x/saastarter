@@ -1,17 +1,11 @@
 {
-  "rewrites": [
-    { "source": "/docs/", "destination": "https://www.saastarter.site/" },
-    {
-      "source": "/docs/:match*",
-      "destination": "https://www.saastarter.site/:match*"
-    },
-    { "source": "/", "destination": "https://www.saastarter.site/" },
-    {
-      "source": "/:match*",
-      "destination": "https://www.saastarter.site/:match*"
-    }
+  "version": 2,
+  "builds": [
+    { "src": "app/next.config.mjs", "use": "@vercel/next" },
+    { "src": "docs/next.config.js", "use": "@vercel/next" }
   ],
-
-  "buildCommand": "cd app && npm run build",
-  "outputDirectory": "app/.next"
+  "routes": [
+    { "src": "/docs(.*)", "dest": "/docs$1" },
+    { "src": "/(.*)", "dest": "/app/$1" }
+  ]
 }
