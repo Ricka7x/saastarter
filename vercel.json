@@ -1,19 +1,10 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "app/package.json", "use": "@vercel/next" },
-    {
-      "src": "docs/package.json",
-      "use": "@vercel/next",
-      "config": {
-        "buildCommand": "cd docs && npm install && npm run build",
-        "outputDirectory": "docs/.next"
-      }
-    }
-  ],
-  "routes": [
-    { "src": "/docs", "dest": "/docs/" },
-    { "src": "/docs/(.*)", "dest": "/docs/$1" },
-    { "src": "/(.*)", "dest": "/app/$1" }
+  "buildCommand": "cd app && npm run build && cd ../docs && npm run build",
+  "outputDirectory": ".",
+  "rewrites": [
+    { "source": "/docs", "destination": "/docs" },
+    { "source": "/docs/:path*", "destination": "/docs/:path*" },
+    { "source": "/(.*)", "destination": "/app/$1" }
   ]
 }
