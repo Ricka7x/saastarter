@@ -1,4 +1,17 @@
 {
+  "rewrites": [
+    { "source": "/docs/", "destination": "https://www.saastarter.site/" },
+    {
+      "source": "/docs/:match*",
+      "destination": "https://www.saastarter.site/:match*"
+    },
+    { "source": "/", "destination": "https://www.saastarter.site/" },
+    {
+      "source": "/:match*",
+      "destination": "https://www.saastarter.site/:match*"
+    }
+  ],
+
   "buildCommand": "cd app && npm run build",
   "outputDirectory": "app/.next"
 }
