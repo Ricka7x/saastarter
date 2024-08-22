@@ -1,28 +1,26 @@
 {
-  "name": "nextjs-monorepo",
-  "version": "1.0.0",
+  "name": "app",
+  "version": "0.1.0",
   "private": true,
-  "workspaces": [
-    "app",
-    "docs"
-  ],
   "scripts": {
-    "dev": "npm run dev:app && npm run dev:docs",
-    "dev:app": "cd app && npm run dev",
-    "dev:docs": "cd docs && npm run dev",
-    "build": "npm run build:app && npm run build:docs",
-    "build:app": "cd app && npm run build",
-    "build:docs": "cd docs && npm run build",
-    "start": "concurrently \"npm run start:app\" \"npm run start:docs\"",
-    "start:app": "cd app && npm start",
-    "start:docs": "cd docs && npm start",
-    "install:app": "npm install --workspace=app",
-    "install:docs": "npm install --workspace=docs",
-    "add:app": "npm install --workspace=app",
-    "add:docs": "npm install --workspace=docs"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "14.2.5"
   },
   "devDependencies": {
-    "concurrently": "^7.6.0",
-    "http-proxy-middleware": "^3.0.0"
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5"
   }
 }

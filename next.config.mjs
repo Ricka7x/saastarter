@@ -5,11 +5,11 @@ const nextConfig = {
     return [
       {
         source: '/docs',
-        destination: 'http://localhost:3001/docs',
+        destination: '/docs/index.html',
       },
       {
         source: '/docs/:path*',
-        destination: 'http://localhost:3001/docs/:path*',
+        destination: '/docs/:path*',
       },
     ];
   },
