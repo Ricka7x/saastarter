@@ -3,4 +3,18 @@ const withNextra = require('nextra')({
   themeConfig: './theme.config.jsx',
 });
 
-module.exports = withNextra();
+module.exports = withNextra({
+  basePath: '/docs',
+  async rewrites() {
+    return [
+      {
+        source: '/docs',
+        destination: '/docs/index',
+      },
+      {
+        source: '/',
+        destination: 'http://localhost:3000/',
+      },
+    ];
+  },
+});
