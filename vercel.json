@@ -1,10 +1,6 @@
 {
-  "version": 2,
-  "buildCommand": "cd app && npm run build && cd ../docs && npm run build",
-  "outputDirectory": ".",
   "rewrites": [
-    { "source": "/docs", "destination": "/docs" },
-    { "source": "/docs/:path*", "destination": "/docs/:path*" },
-    { "source": "/(.*)", "destination": "/app/$1" }
+    { "source": "/docs", "destination": "https://saastarter-docs.vercel.app" },
+    { "source": "/docs/:match*", "destination": "https://saastarter-docs.vercel.app/:match*" }
   ]
 }
